@@ -4,51 +4,59 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 */
 
+let primeNumbers = [2];
+
 isPrimeNumber = (number) => {
+    // Assume the number is prime. Innocent until proven guilty.
     let isPrime = true;
-    for(i = number; i > 0; i--)
-    {
-        if(i != 1 && i != number && number % i === 0)
+    // For every prime number the program already knows, try and divide the number.
+    primeNumbers.forEach((prime) => {
+        if(number % prime === 0)
         {
             isPrime = false;
         }
+    })
+    // If we still believe this to be a prime number, add it to our array of prime numbers for a later date
+    if(isPrime && (!primeNumbers.includes(number)))
+    {
+        primeNumbers.push(number);
     }
     return isPrime;
 }
 
 largestPrimeFactorOf = (number) => {
     let primeFactors = [];
-    let sequence = 2; // Begin at the first prime number
+    let sequence = 3; // Begin at the first odd prime number
     let currentValue = number;
-    console.log("started at: " + new Date().toTimeString())
-    while(currentValue > 0)
+    let startTime =  Number(Date.now());
+    while(currentValue > 0 && sequence < (currentValue / 2))
     {
-        
-        
         if(isPrimeNumber(sequence))
         {
-            if(number % sequence === 0)
+            if(currentValue % sequence === 0)
             {
                 if(!primeFactors.includes(sequence))
                 {
                     primeFactors.push(sequence);
-                    sequence++;
                 }
-                currentValue = (number / sequence);
+                currentValue = (currentValue / sequence);
+                sequence = 3;
             }
             else
             {
-                sequence++;
+                sequence+= 2;
             }
         }
         else
         {
-            sequence++;
+            sequence+= 2;
         }
     }
-    console.log("finished at: " + new Date().toTimeString())
-    console.log(primeFactors.toString());
+    primeFactors.push(currentValue);
+    let endTime = Number(Date.now());
+    primeFactors.sort((a,b) => {return b-a});
+    console.log("Completed in: " + (endTime - startTime) + " milliseconds.");
+    console.log(primeFactors[0]);
 }
-
 
 largestPrimeFactorOf(600851475143);
