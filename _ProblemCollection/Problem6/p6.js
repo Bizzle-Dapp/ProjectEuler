@@ -7,7 +7,7 @@ square = (number) => {
     return (number * number);
 }
 
-findDifferenceBetweenSumOfSquaresAndSum = (upToNumber) => {
+findDifferenceBetweenSumOfSquaresAndSquareOfSum = (upToNumber) => {
     let startTime = Date.now();
     let sumOfSquare = 0;
     let sum = 0;
@@ -26,4 +26,4 @@ findDifferenceBetweenSumOfSquaresAndSum = (upToNumber) => {
     console.log(output);
 }
 
-findDifferenceBetweenSumOfSquaresAndSum(100);
+findDifferenceBetweenSumOfSquaresAndSquareOfSum(100);
