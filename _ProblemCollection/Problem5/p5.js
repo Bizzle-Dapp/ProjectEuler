@@ -5,7 +5,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 */
 
 isDivisibleBySequence = (number, maxValue) => {
-    for(i = maxValue; i > 1; i--)
+    for(let i = maxValue; i > 1; i--)
     {
         if(number % i !== 0)
         {
@@ -18,12 +18,9 @@ isDivisibleBySequence = (number, maxValue) => {
 smallestNumberDivisibleBy = (maxValue) => {
     let answer = 0;
     let startTime = Date.now();
-    for(t = 1; t < Infinity; t++)
+    for(let i = 1; i < Infinity; i++)
     {
-        // I just discovered some nasty javascript functionality here. If this for loops internal variable shares a name with the for loop in the method of the if 
-        // statement, it acts like a var declaration, ignoring scope and entering an endless loop where one resets the others value on repeat.
-        // Go ahead, rename t to i and watch it bounce from 20 to 21 back to 20 for the rest of time.
-        // <3 Javascript
+        // *1 [See Comment Below]
         if(isDivisibleBySequence(t,maxValue))
         {
             answer = t;
@@ -36,3 +33,13 @@ smallestNumberDivisibleBy = (maxValue) => {
 }
 
 smallestNumberDivisibleBy(20);
+
+/***1
+Initial comment: I just discovered some nasty javascript functionality here. If this for loops internal variable shares a name with the for loop in the method of the if 
+        // statement, it acts like a var declaration, ignoring scope and entering an endless loop where one resets the others value on repeat.
+        // Go ahead, rename t to i and watch it bounce from 20 to 21 back to 20 for the rest of time.
+        // <3 Javascript
+
+Review: If you don't define var or let for the variable in a for loop, by default it is var. This is completely expected functionality. 
+        // moral of the story is like Mark told me years ago. Never use var - ever.
+*/
