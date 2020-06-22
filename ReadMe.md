@@ -7,7 +7,7 @@ Just another repo to pour some of my free time into
 
 ## Awards gained so far:
 
-![img](https://projecteuler.net/images/awards/award_01.png) Solve Three Problems
+<span>![img](https://projecteuler.net/images/awards/award_01.png) <br/> Solve Three Problems </span>
 ![img](https://projecteuler.net/images/awards/award_03.png) Solve Ten Consecutive Problems
 
 
