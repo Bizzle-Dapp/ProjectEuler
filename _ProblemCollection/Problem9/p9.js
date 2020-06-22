@@ -46,7 +46,7 @@ findProductOfPythagoreanTripletWhereSumOfABCIs = (number) => {
     if(pythagoreanTripletArray.length > 0)
     {
         pythagoreanTripletArray.forEach(triplet => {
-            if(triplet.a + triplet.b + triplet.c === 1000)
+            if(triplet.a + triplet.b + triplet.c === number)
             {
                 // Bingo
                 pythagoreanTripletSum = triplet;
@@ -54,7 +54,7 @@ findProductOfPythagoreanTripletWhereSumOfABCIs = (number) => {
         })
     }
 
-    console.log(`Product of Triplet that have a sum of ${number} is: ` + (pythagoreanTripletSum.a * pythagoreanTripletSum.b * pythagoreanTripletSum.c));
+    console.log(`Product of Triplet that have a sum of ${number} is: ` + (pythagoreanTripletSum.a * pythagoreanTripletSum.b * pythagoreanTripletSum.c) + `. They are ${pythagoreanTripletSum.a} ${pythagoreanTripletSum.b} and ${pythagoreanTripletSum.c}`);
 }
 
 findProductOfPythagoreanTripletWhereSumOfABCIs(1000);
