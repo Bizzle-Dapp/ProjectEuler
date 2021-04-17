@@ -1,4 +1,4 @@
-someHorribleShit = () => {
+someHorribleStuff = () => {
     //  change let to var. Go on, i dare you.
     for(let i = 0; i < 10; i++){
         console.log(i);
@@ -8,4 +8,4 @@ someHorribleShit = () => {
     }
 }
 
-console.log(someHorribleShit());
+console.log(someHorribleStuff());
