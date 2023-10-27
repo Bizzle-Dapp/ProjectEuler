@@ -1,7 +1,5 @@
 # Project Euler Solutions
 
-![img](https://projecteuler.net/images/euler_portrait.png)
-
 ## Exercising my brain when I have a little time:
 Just another repo to pour some of my free time into
 
